@@ -1,0 +1,20 @@
+#typing-container {
+	border-style: solid;
+	border-color: gray;
+	border-radius: 5px;
+	padding: 1em;
+	margin: 1em;
+}
+
+button {
+	border-style: solid;
+	border-color: gray;
+	border-radius: 5px;
+	padding: 0.5em;
+	color: black;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+button:hover {
+	border-color: red;
+}
