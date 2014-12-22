@@ -10,7 +10,8 @@ The script is fairly easy to implement. You need to have a containing `<div>` wi
 
 ### Example HTML
 
-    <div id="container">
+    <p id="typing-prompt"></p>
+    <div id="typing-container">
     	<span id="typing-text">
     		This is the text you want to appear when you
     		start to type in the webpage. It dosn't matter what's
@@ -19,7 +20,14 @@ The script is fairly easy to implement. You need to have a containing `<div>` wi
     		<a href="#">This is a link</a>, for example.
     	</span><span id="typing-cursor">|</span>
     </div>
-    	<script src="typing.js"></script>
+    <script src="typing.js"></script>
+
+## IDs and what they do
+
+- **`#typing-prompt`**: (optional) This is an element that is filled with some prompt text which differs depending on whether the browser is touch-based or not.  
+- **`#typing-container`**: This is a `<div>` that contains `#typing-text` and `#typing-cursor`   
+- **`#typing-text`**: A `<span>` containing the text you want to appear.  
+- **`#typing-cursor`**: A `<span>` containing the char you want to use as the blinking cursor
 
 ## Credits
 

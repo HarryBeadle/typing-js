@@ -6,14 +6,25 @@
 // #typing-text is the span in which the content appears
 // #typing-cursor is the span where the cursor will apear
 // Inside #typing-cursor put the char you want as the cursor
+// #typing-prompt is a <p> where a prompt is displayed.
 
 // Find Elements
+var container = document.getElementById("typing-container")
 var content = document.getElementById("typing-text")
 var cursor = document.getElementById("typing-cursor")
+var prompt = document.getElementById("typing-prompt")
+
+if (prompt != null) {
+	if (window.navigator.msMaxTouchPoints || ('ontouchstart' in document.documentElement)) {
+	prompt.innerHTML = "Touch to reveal text..."
+	} else {
+		prompt.innerHTML = "Start typing...	"
+	}
+}
 
 // Cusor Variables
 var cursor_contents = cursor.innerHTML
-var cursor_inactive = true
+var cursor_inactive = false
 var cursor_visable = true
 
 // Cursor Functions
@@ -30,8 +41,11 @@ window.setInterval(BlinkCursor, 1000)
 
 // Text Setup
 var list = content.innerHTML.split(" ")
-var string = ">"
+var string = ""
 content.innerHTML = string
+if (container.style.minHeight == '') {
+	container.style.minHeight = "1.1em"
+}
 
 // Text Functions
 function typingshownext() {
@@ -52,4 +66,4 @@ function typingshowall() {
 	}
 }
 window.onkeypress = typingshownext
-document.getElementById("typing-container").onclick = typingshownext
+container.onclick = typingshownext
