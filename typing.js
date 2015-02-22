@@ -22,7 +22,7 @@ if (prompt != null) {
 	}
 }
 
-// Cusor Variables
+// Cursor Variables
 var cursor_contents = cursor.innerHTML
 var cursor_inactive = false
 var cursor_visable = true
